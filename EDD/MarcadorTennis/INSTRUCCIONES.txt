@@ -1,0 +1,15 @@
+
+Este programa lo realice en JAVA ya hace algunos meses, ya que soy jugador de tennis y pues como proyecto me propuse hacer este marcador para poder 
+llevar el conteo de un marcador de tennis a 2-3 sets
+
+INSTRUCCIONES:
+
+	1. Ingresar los nombres de los jugadores ( un nombre y un apellido )
+
+	2. Para poder registrar una bola ganada a favor de algun jugador,
+	solo se debe hacer click en el marcador del jugador, es decir si el jugador
+	de la izquierda gano el punto se clicka en la parte izquierda de la
+	interfaz y asi respectivamente con el otro jugador
+
+	3. Automaticamente el programa detecta cual jugador ya gano dos sets
+	para asi determinar el ganador
