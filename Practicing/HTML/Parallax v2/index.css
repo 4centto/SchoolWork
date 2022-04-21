@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body{
+    background: #101452;
+    min-height: 1500px;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    background: #101452;
+    height: 900px;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+section img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+#mountains{
+    z-index: 1;
+}
+
+#trees{
+    z-index: 3;
+}
+
+p{
+    font-size: 30px;
+    color: white;
+}

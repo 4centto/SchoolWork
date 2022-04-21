@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SumaResta (HerenciaYPOO)", "SumaResta (HerenciaYPOO)\SumaResta (HerenciaYPOO).pyproj", "{1CA16B1F-9102-465A-8990-7EC31BA2F00C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CA16B1F-9102-465A-8990-7EC31BA2F00C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA16B1F-9102-465A-8990-7EC31BA2F00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {639D5016-27B1-49FB-91F3-2AD35CA95A50}
+	EndGlobalSection
+EndGlobal

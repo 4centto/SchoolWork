@@ -1,0 +1,375 @@
+<!DOCTYPE html5>
+<!--API Canvas para Dibujos, etc.-->
+<!--
+    METODOS:
+        - getContext("2d" o "3d");
+        - fillRect(x, y, ancho, alto); (Rectangulo sólido)
+        - strokeRect(x, y, ancho, alto); (Rectangulo vacio)
+        - clearRect(x, y, ancho, alto); (Borrador de Rectangulo)
+
+        - createLinearGradient(x1, y1, x2, y2);    (Crea objeto para aplicar degradado al lienzo)
+        - createRadialGradient(x1, y1, r1, x2, y2, r2);    (Crea objeto para aplicar degradado circular o radial)
+        - addColorStop(posicion, color);    (Marca donde empieza el degradado)
+
+        - beginPath();    (1er metodo a ser llamado comienza la figura)
+        - closePath();    (Ultimo en ser llamado. Termina la figura)
+            * stroke();  (Solo contorno)
+            * fill();  (Figura solida)
+            * clip();  (Crea una mascara)
+
+            * moveTo(x, y); (Mover el lapiz a la posicion marcada)
+            * lineTo(x, y); (genera linea recta)
+            * Rect(x, y, ancho, alto); (Genera rectangulo)
+            * Arc(x, y, radio, angulo_inicial, angulo_final, direccion);
+            * bezierCurveTo(a, b, c, d, x, y); (Curva bezier cubica)
+            * quadraticCurveTo(a, b, x, y); (Curva bezier cuadrada)
+    
+    PROPIEDADES:
+        - strokeStyle    (Color de contorno)
+        - fillStyle    (Color de relleno)
+        - globalAlpha    (Transparencia de todas las figuras en el lienzo)
+        - lineWidth    (Grosor de linea, ejemplo = 1)
+        - lineCap    (Final de linea ejemplo = butt, round, square)
+        - lineJoin    (Conexion entre lienas ejemplo = round, bevel, miter)
+        - miterLimit    (Dtermina cuanto ha de extenderse las exenciones de lineas en el lineJoin)
+        - globalCompositerOperation="(source-in, source-out, source-atop, lighter, xor, destination-over, destination-in, 
+                                      destination-out, destination-atop, darker, copy)";
+        
+
+    TEXTO EN CANVAS:
+        - font (Mismos valores que en CSS)
+        - testAlign (start, end, left, right, center) (Horizontal)
+        - textBaseLine (top, hanging, middle, alphabetic, ideographic, bottom) (Vertical)
+
+        - strokeText(texto, x, y); (Texto sin contorno)
+        - fillText(texto, x, y); (Texto con relleno)
+        - measureText (Devuelve la informacion sobre el tamaño del texto. Util en animaciones)
+
+        - shadowColor
+        - shadowOffsetX
+        - shadowOffsetY
+        - shadowBlur
+    
+    TRANSFORMACIONES: 
+        - translate(x, y);  (Mueve el origen del lienzo)
+        - rotate(radianes);  (Rota el lienzo)
+        - scale(x, y);  (Aumenta o disminuye el lienzo)
+        - transform(m1, m2, m3, dx, dy);  (Cambia las caracteristicas del lienzo)
+        - setTransform(m1, m2, m3, dx, dy);  (Reinicia las caracteristicas de la matriz)
+        - save();  (Graba el estado del lienzo)
+        - restore();  (Restaura el estado del lienzo)
+
+    DIBUJAR IMAGENES:
+        - drawImage(imagen, x, y); (Imagen)
+        - drawImgae(imagen, x, y, ancho, alto); (Tamaños)
+        - drawImgae(imagen, x1, y1, ancho1, alto1, x, y2, ancho2, alto2); (Recortes)
+
+        - getImageData(x, y, ancho, alto);
+        - putImageData(datosdeimagen, x, y);
+        - createImageData(ancho, alto);
+
+    ANIMACIONES: 
+        - clearRect();
+        - setInterval();
+        - clearInterval();
+
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dibujos (Canvas)</title>
+
+        <style>
+            #lienzo{
+                border-radius: 50px;
+                cursor: pointer;
+                border: 2px #000000 solid;
+                box-shadow: black 2px 2px 5px;
+            }
+            section{
+                width: 1200;
+                position: relative;
+                margin: auto;
+            }
+        </style>
+
+        <script>
+
+            function Inicializar(){
+                var elemento = document.getElementById("lienzo");
+                lienzo = elemento.getContext("2d"); // Obligatorio para indicar al programa que tipo de dibijo se hará
+
+                //TRAZADO DE FIGURAS COMPLEJAS
+                /*
+                //Primero se abre el libro de dibujo
+                lienzo.beginPath();
+
+                //Luego se dibujan diferentes formas con el metodo moveTo();
+                lienzo.moveTo(100, 200);
+                lienzo.lineTo(200, 200);
+                lienzo.lineTo(150, 150); //
+                lienzo.lineTo(100, 200);
+                lienzo.closePath();
+
+                //Para pintar los trazos,solo se escriben los siguientes metodos
+                //lienzo.stroke();
+                //lienzo.fill();
+                */
+
+                //HACIENDO UNA MASCARA
+                /*
+                lienzo.fillStyle="red";
+                lienzo.moveTo(150, 250);
+                lienzo.lineTo(350, 250);
+                lienzo.lineTo(250, 50);
+                lienzo.closePath();
+
+                lienzo.clip();
+
+                var degradado = lienzo.createLinearGradient(0, 0, 500, 500);
+                degradado.addColorStop(0, "black");
+                degradado.addColorStop(1, "white");
+
+                lienzo.fillStyle=degradado;
+
+                lienzo.fillRect(0,0,500,300);
+                */
+
+                //Trazados curvos
+                /*
+                lienzo.beginPath();
+                lienzo.arc(100, 100, 50, 0, Math.PI, false);
+                lienzo.stroke();
+                lienzo.closePath();
+                *//*
+                lienzo.beginPath();
+                lienzo.moveTo(50, 50);
+                lienzo.quadraticCurveTo(100, 125, 50, 200);
+                lienzo.stroke();
+                lienzo.closePath();
+                *//*
+                lienzo.beginPath();
+                lienzo.moveTo(250, 50);
+                lienzo.bezierCurveTo(200, 125, 300, 125, 250, 200);
+                lienzo.stroke();
+                lienzo.closePath();
+                */
+
+                /*
+                lienzo.beginPath();
+                lienzo.arc(250, 150, 100, 0, (Math.PI) * 2, false);
+                lienzo.stroke();
+
+                lienzo.lineWidth=10;
+                lienzo.lineCap="round";
+
+                lienzo.beginPath();
+                lienzo.moveTo(190, 180);
+                lienzo.quadraticCurveTo(250, 230, 310, 180);
+
+                lienzo.stroke();
+
+                lienzo.lineWidth=7;
+                lienzo.fillStyle="blue";
+
+                lienzo.beginPath();
+                lienzo.arc(215, 120, 25, 0, (Math.PI) * 2, false);
+                lienzo.stroke();
+
+                lienzo.beginPath();
+                lienzo.arc(215, 120, 10, 0, (Math.PI) * 2, false);
+                lienzo.fill();
+
+                lienzo.beginPath();
+                lienzo.arc(285, 120, 25, 0, (Math.PI) * 2, false);
+                lienzo.stroke();
+
+                lienzo.beginPath();
+                lienzo.arc(285, 120, 10, 0, (Math.PI) * 2, false);
+                lienzo.fill();
+
+                lienzo.lineJoin="round";
+
+                lienzo.beginPath();
+                lienzo.moveTo(250, 150);
+                lienzo.lineTo(270, 175);
+                lienzo.lineTo(250, 175);
+                lienzo.stroke();
+                */
+
+                //Textos
+                /*
+                lienzo.shadowColor = "rgba(0, 0, 0, 0.5)";
+
+                lienzo.shadowOffsetX = 3;
+                lienzo.shadowOffsetY = 3;
+                lienzo.shadowBlur = 3;
+
+                lienzo.font="bold 48px verdana";
+                lienzo.textAlign="start";
+                lienzo.textBaseline="top";
+                lienzo.fillText("Hola Mundo", 100, 100);
+
+                var dimensiones = lienzo.measureText("Hola Mundo");
+
+                lienzo.strokeRect(95, 95, dimensiones.width + 10, 50);
+                */
+
+                //Lienzo de transformaciones
+                /*
+                lienzo.font="bold 20px verdana";
+                lienzo.fillText("Hola Mundo", 50, 20);
+                lienzo.translate(100, 100);
+                lienzo.scale(5, 5);
+                lienzo.rotate(Math.PI);
+                lienzo.fillText("Hola Mundo", -200, -10);
+                */
+
+                /*
+                lienzo.transform(3, 0, 0, 1, 0, 0);  //escala-x, rotar, cesgar, escala-y, cordenadas-lienzo-x, coordenadas-lienzo-y
+                lienzo.font="bold 20px verdana";
+                lienzo.fillText("Hola Mundo", 20, 20);
+                lienzo.setTransform(1, 0, 0, 10, 0, 0);  //escala-x, rotar, cesgar, escala-y, cordenadas-lienzo-x, coordenadas-lienzo-y
+                lienzo.font="bold 20px verdana";
+                lienzo.fillText("Hola Mundo", 20, 20);
+                */
+
+                /*
+                lienzo.font="bold 20px verdana";
+                lienzo.save(); // Se guarda el canvas con sus caracteristicas
+
+                lienzo.fillText("Hola Mundo", 20, 20);
+                lienzo.rotate(Math.PI / 180 * 55);
+
+                lienzo.fillText("Hola Mundo (1)", 0, 0);
+                //lienzo.rotate(-Math.PI / 180 * 55);
+
+                lienzo.restore();
+
+                lienzo.translate(300, 400);
+                lienzo.scale(2, 2);
+
+                lienzo.fillText("Hola Mundo (2)", 0, 0);
+                */
+                /*
+                lienzo.fillStyle="#880000";
+                lienzo.fillRect(400, 250, 300, 100);
+
+                lienzo.globalCompositeOperation="destination-in";
+
+                lienzo.fillStyle="#AAAAFF";
+                lienzo.font="bold 80px verdana";
+                lienzo.textAlign="center";
+                lienzo.textBaseline="middle";
+                lienzo.fillText("Hola Mundo", 550, 300);
+                */
+
+                /*
+                var imagen = new Image();
+                imagen.src="logoe.jpg";
+
+                imagen.addEventListener("load", manipular, false);
+                */
+
+                //bucle = setInterval(Animacion, 1); // Animacion 1
+
+                //window.addEventListener("mousemove", Animacion, false); // Animacion 2
+
+            }
+
+            /*
+            function Animacion(e){
+                lienzo.clearRect(0, 0, 500, 500);
+                
+                var xraton = e.clientX;
+                var yraton = e.clientY;
+                var xcentro = 200;
+                var ycentro = 250;
+
+                var angulo = Math.atan2(xraton - xcentro, yraton - ycentro);
+
+                var x = xcentro + Math.round(Math.sin(angulo) * 10);
+                var y = ycentro + Math.round(Math.cos(angulo) * 10);
+
+                lienzo.beginPath();
+                lienzo.arc(xcentro, ycentro, 20, Math.PI * 2, false);
+                lienzo.moveTo(270, 250);
+                lienzo.arc(250, ycentro, 20, Math.PI * 2, false);
+
+                lienzo.stroke();
+
+                lienzo.beginPath();
+                lienzo.arc(x, y, 10, 0, Math.PI * 2, false);
+                lienzo.moveTo(x, y);
+                lienzo.arc(x + 50, y, 10, 0, Math.PI * 2, false);
+                lienzo.fill();
+
+            }
+            */
+
+            //var y = 40, botes = 0, altura = 40;
+            //var subida = false;
+            /*
+            function Animacion(){
+
+                lienzo.clearRect(0, 0, 500, 500);
+                lienzo.beginPath();
+                lienzo.arc(250, y, 40, Math.PI * 2, false);
+                lienzo.fill();
+
+                lienzo.font="bold 40px verdana";
+                lienzo.textAlign="center";
+                lienzo.textBaseline="middle";
+                lienzo.fillText(""+botes, 40, 40);
+                
+                if(subida == false){
+                    y ++;
+                    if(y == 460){
+                        subida = true;
+                    }
+                } else {
+                    y--;
+                    if(y == altura){
+                        altura += 20;
+                        subida = false;
+                    }
+                }
+
+            }
+            */
+
+            /*
+            function manipular(e){
+                imagen=e.target;
+                lienzo.drawImage(imagen, 0, 0);
+
+                var info_imagen = lienzo.getImageData(0, 0, 145, 145);
+                var posicion;
+
+                for(var i = 0; i < 500; i++){
+                    for(var j = 0; j < 500; j++){
+                        posicion=(info_imagen.width * 4 * j) + (i + 4);
+                        info_imagen.data[posicion] = 255 - info_imagen.data[posicion];
+                        info_imagen.data[posicion + 1] = 255 - info_imagen.data[posicion + 1];
+                        info_imagen.data[posicion + 2] = 255 - info_imagen.data[posicion + 2];
+                    }
+                }
+
+                lienzo.putImageData(info_imagen, 0, 0);
+
+            }
+            */
+
+            window.addEventListener("load", Inicializar, false);
+
+        </script>
+
+    </head>
+    <body>
+        <section id="dibujo">
+            <canvas id="lienzo" width="500px" height="500px">
+                Su navegador no soporta los canvas <!--Informar que e navegador no soporta el elemento canvas-->
+            </canvas>
+        </section>
+    </body>
+</html>

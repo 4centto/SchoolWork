@@ -1,0 +1,36 @@
+1. npm install @react-navigation/native
+2. npm install @react-navigation/stack react-native-gesture-handler
+3. npm install @react-navigation/native-stack
+4. npm install react-native-screens/native-stack
+
+//Crear el navigation
+import { enableScreens } from 'react-native-screens'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from 'react-native-screens/native-stack'
+import { View, StyleSheet } from 'react-native';
+
+enableScreens();
+const Stack = createNativeStackNavigator()
+
+export default function App() {
+  return (
+    <View style={styles.main}>
+      <StatusBar hidden={true} />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="login" component={Login} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </View>
+  )
+}
+
+
+}
+
+//Para navegar entre los navs
+5. {
+
+this.props.navigation.navigate("name")
+
+}

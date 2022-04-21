@@ -1,0 +1,129 @@
+<!DOCTYPE html5>
+
+<!--
+    INDEXED DB
+    Nos permite almacenar una cantidad mucho mas grande de datos de manera local, es decir, en la pc del mismo usuario.
+    Esta esta compuesta de almacenes de datos (Tablas), en los que se almacenaran objetos, es decir elementos o datos.
+
+    1) Crear BD:
+        - Atributo: indexedDB
+        - Método: open(nombredebase);
+    2) Crear Objetos:
+        - Método: createObjectStore();
+    3) Crear Transaccion (para agregar elementos):
+        - Método: transaction();
+    4) Agregar Elementos:
+        - Método: add();
+    5) Mostrar Elementos_
+        - Abrir cursor: 
+            - Método: openCursor();
+
+-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Indexed DB</title>
+        <style>
+            #contenedor{
+                margin: 0px auto;
+                width: 300px;
+                display: flex;
+                background: grey;
+                border-radius: 20px;
+            }
+            #cajaformulario{
+                margin: 0px auto;
+            }
+            #contenedor_zonadatos{
+                margin: 10px auto;
+                width: 300px;
+                height: 200px;
+                border: 2px solid red;
+                display: flex;
+                align-items: center;
+            }
+            #zonadatos{
+                margin: 0px auto;
+            }
+        </style>
+        <script>
+            var zonadatos, boton, bd;
+
+            function Inicializar(){
+                //Identificar elementos
+                zonadatos = document.getElementById("zonadatos");
+                boton = document.getElementById("grabar");
+
+                var solicitud = indexedDB.open("mibase2");
+
+                solicitud.onsuccess=function(e){
+                    bd = e.target.result;
+                }
+
+                solicitud.onupgradeneeded=function(e){
+                    bd = e.target.result;
+                    bd.createObjectStore("gente", {keyPath: "clave"});
+                }
+
+                //Crear DB
+                boton.addEventListener("click", function(){ //Agregar objeto
+                    var clave = document.getElementById("clave").value;
+                    var titulo = document.getElementById("texto").value;
+                    var fecha = document.getElementById("fecha").value;
+
+                    var transaccion = bd.transaction(["gente"], "readwrite");
+                    var almacen = transaccion.objectStore("gente");
+
+                    var agregar = almacen.add({clave: clave, titulo: titulo, fecha: fecha});
+
+                    agregar.addEventListener("success", function(){ // SI el objeto se agrego correctamente
+
+                        zonadatos.innerHTML="";
+                        var transaccion = bd.transaction(["gente"], "readonly");
+                        var almacen = transaccion.objectStore(["gente"]);
+
+                        var cursor = almacen.openCursor();
+                        cursor.addEventListener("success", function(e){
+                            var cursor = e.target.result;
+                            if(cursor){
+
+                                zonadatos.innerHTML += "<div>" + cursor.value.clave + " - " + cursor.value.titulo + " - "
+                                    + cursor.value.fecha + "</div>";
+
+                                cursor.continue();
+
+                            }
+                        }, false);
+
+                    }, false);
+
+                    document.getElementById("clave").value="";
+                    document.getElementById("texto").value="";
+                    document.getElementById("fecha").value="";
+
+                }, false);
+
+            }
+
+            window.addEventListener("load", Inicializar, false);
+        </script>
+    </head>
+    <body>
+        <div id="contenedor">
+            <section id="cajaformulario">
+                <form name="formulario">
+                    <p>Clave:<br><input type="text" name="clave" id="clave"></p>
+                    <p>Titulo:<br><input type="text" name="texto" id="texto"></p>
+                    <p>Año:<br><input type="text" name="fecha" id="fecha"></p>
+                    <p><input type="button" name="grabar" id="grabar" value="Grabar"></p>
+                </form>
+            </section>
+        </div>
+        <div id="contenedor_zonadatos">
+            <section id="zonadatos">
+                <p id="leyenda">Futuros Datos</p>
+            </section>
+        </div>
+    </body>
+</html>

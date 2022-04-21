@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../estilos/Estilos.css" />
+        <title>Ejercicio Guiado</title>
+
+        <script>
+            function Ejecutar(){
+                for(var i = 0; i < 6; i++){
+                    document.getElementsByTagName("li")[i].onclick=Alerta;
+                }
+            }
+            function Alerta(){
+                alert("Has seleccionado una imagen");
+            }
+            window.onload=Ejecutar;
+        </script>
+
+    </head>
+    <body>
+        <div id="encabezado">
+            <h1 style="color: white; display: contents;">GALERIA DE FOTOS</h1>
+        </div>
+
+        <ul>
+            <li>
+                <div id="contenedorImagen">
+                    <img id="imagenes" src="../imagenes/1.jpg" />
+                    <p id="referencias">Imagen 1</p>
+                </div>
+            </li>
+            <li>
+                <div id="contenedorImagen">
+                    <img id="imagenes" src="../imagenes/2.jpg" />
+                    <p id="referencias">Imagen 2</p>
+                </div>
+            </li>
+            <li>
+                <div id="contenedorImagen">
+                    <img id="imagenes" src="../imagenes/3.jpg" />
+                    <p id="referencias">Imagen 3</p>
+                </div>
+            </li>
+            <li>
+                <div id="contenedorImagen">
+                    <img id="imagenes" src="../imagenes/4.jpg" />
+                    <p id="referencias">Imagen 4</p>
+                </div>
+            </li>
+            <li>
+                <div id="contenedorImagen">
+                    <img id="imagenes" src="../imagenes/5.jpg" />
+                    <p id="referencias">Imagen 5</p>
+                </div>
+            </li>
+            <li>
+                <div id="contenedorImagen">
+                    <img id="imagenes" src="../imagenes/6.jpg" />
+                    <p id="referencias">Imagen 6</p>
+                </div>
+            </li>
+        </ul>
+
+        <div style="text-align: center;">
+            <img id="imagenFooter" src="../imagenes/paisaje_nieve.jpg"/>
+        </div>
+
+    </body>
+</html>

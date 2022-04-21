@@ -1,0 +1,43 @@
+<!DOCTYPE html5>
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../estilos/estilosformulario.css" />
+        <script src="../scripts/funcionalidades.js"></script>
+        <title>Formulario</title>
+    </head>
+    <body>
+
+        <div>
+            <section id="contenedor_formulario">
+                <h1 style="font-family: fantasy; font-size: 40px; color: white; text-shadow: black 5px 5px 0px;">
+                    FORMULARIO
+                </h1>
+                <form id="formulario" name="formulario" method="get">
+                    <div id="lista">
+                        <p id="indicadores">Nombre: </p>
+                        <input id="campos" name="nombre" type="text" required placeholder="Nombre"/>
+                    </div>
+                    <div id="lista">
+                        <p id="indicadores">Apellidos: </p>
+                        <input id="campos" type="text" name="apellidos" required placeholder="Apellidos"/>
+                    </div>
+                    <div id="lista">
+                            <p id="indicadores">Edad: </p>
+                            <input id="campos" name="edad" type="number" required placeholder="Edad"/>
+                    </div>
+                    <div id="lista">
+                            <p id="indicadores">Sueldo: </p>
+                            <input id="barra" name="sueldo" type="range" required min="2000" max="20000" step="2000"/>
+                            <p id="num_sueldo">(0)</p>
+                    </div>
+                    <div style="width: 300px; margin: 50px auto;">
+                            <input type="submit" id="enviar_formulario" value="ENVIAR"/>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+    </body>
+</html>

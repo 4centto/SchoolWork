@@ -1,0 +1,2 @@
+C:\Users\acer_usuario\Desktop\Programacion\C C++\C++\Ejercicios\EjercicioBaseDeDatosTienda\Debug\EjercicioBaseDeDatosTienda.exe
+C:\Users\acer_usuario\Desktop\Programacion\C C++\C++\Ejercicios\EjercicioBaseDeDatosTienda\Debug\EjercicioBaseDeDatosTienda.pdb

@@ -1,0 +1,95 @@
+<!DOCTYPE html5>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Drag&Drop</title>
+
+        <style>
+            body{
+                display: inline-flex;
+            }
+            #destino{
+                width: 400px;
+                height: 280px;
+                margin: 0px auto;
+                border: 5px dashed black;
+                box-shadow: black 5px 5px 2px;
+                border-radius: 10px;
+                text-align: center;
+                vertical-align: middle;
+                display: flex;
+                align-items: center;
+            }
+            #leyenda{
+                font-family: fantasy;
+                font-size: 18px;
+                color: black;
+                text-shadow: grey 2px 2px 5px;
+                margin: 0px auto;
+            }
+            div{
+                width: 400px;
+                height: 280px;
+                margin: 10px auto;
+            }
+        </style>
+        <script>
+            var destino, original, texto;
+            var arratrado = false;
+
+            function Inicializar(){
+                original = document.getElementById("original");
+                destino = document.getElementById("destino");
+                texto = document.getElementById("leyenda");
+
+                texto.addEventListener("mouseover", function(){
+                    destino.style.background="rgba(0, 255, 0, 0.2)";
+                }, false);
+
+                original.addEventListener("dragstart", function(e){
+                    var codigo = "<img src='" + original.getAttribute("src") + "' width='400px'>";
+                    e.dataTransfer.setData("Text", codigo);
+                }, false);
+                original.addEventListener("drag", function(e){
+                    e.preventDefault();
+                }, false);
+                original.addEventListener("dragend", function(e){
+                    if(arrastrado == true){
+                        var elemento = e.target
+                        elemento.style.visibility="hidden";
+                    }
+                }, false);
+
+                destino.addEventListener("dragover", function(e){
+                    e.preventDefault();
+                }, false);
+                destino.addEventListener("dragenter", function(e){
+                    e.preventDefault();
+                    destino.style.background="rgba(0, 255, 0, 0.2)";
+                }, false);
+                destino.addEventListener("dragleave", function(e){
+                    e.preventDefault();
+                    destino.style.background="none";
+                }, false);
+                destino.addEventListener("drop", function(e){
+                    e.preventDefault();
+                    var nuevo = e.dataTransfer.getData("Text");
+                    destino.innerHTML=nuevo;
+                    destino.style.background="none";
+                    arrastrado = true;
+                }, false);
+            }
+
+            window.addEventListener("load", Inicializar, false);
+        </script>
+    </head>
+    <body>
+        <div>
+            <img id="original" src="montanas.jpg" width="400">
+        </div>
+        <section id=destino>
+            <span id="leyenda">Suelte aqui su imagen</span>
+        </section>
+    </body>
+</html>

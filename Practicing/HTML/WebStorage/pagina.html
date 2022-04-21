@@ -1,0 +1,102 @@
+<!DOCTYPE html5>
+
+<!--
+    Almacena la informacion en el ordenador del usuario.
+
+        - sessionStorage  (Alamacena la informacion en el pc de manera temporal, hasta que se cierra la web)
+        - localStorage  (Almacena informacion de manera "Permanente")
+
+    METODOS:
+        - setItem(); -> Permite guardar la informacion
+        - getItem(); -> Leer la informacion guardada
+        - key(i);  -> Da la clave de una cierta posicion
+        - removeItem(clave) -> Borra un solo item
+        - clear();
+
+-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>API WebStorage</title>
+        <style>
+            #contenedor{
+                width: 50%;
+                margin: auto;
+                padding-top: 50px;
+            }
+            #zonaformulario{
+                float: left;
+                padding: 20px;
+                border: 1px solid black;
+            }
+            #clave, #valor{
+                width: 180px;
+            }
+            #zonadatos div{
+                float: right;
+                height: 100px;
+                border: 2px solid red;
+            }
+        </style>
+        <script>
+            var boton;
+            function Inicializar(){
+                boton = document.getElementById("grabar");
+
+                //Creacion del nuevo item
+                boton.addEventListener("click", function(){
+                    var clave = document.getElementById("clave").value;
+                    var valor = document.getElementById("valor").value;
+
+                    if(clave != "" && valor != ""){
+                        //sessionStorage.setItem(clave, valor);
+                        localStorage[clave]=valor;
+                        LeerInformacion(clave);
+
+                        var clave = document.getElementById("clave").value="";
+                        var valor = document.getElementById("valor").value="";
+
+                    } else {
+                        alert("Datos incorrectos");
+                    }
+
+                }, false);
+
+                function LeerInformacion(clave){
+                    var datos = document.getElementById("zonadatos");
+
+                    datos.innerHTML="";
+
+                    for(var i = 0; i < localStorage.length; i++){
+                        var key = localStorage.key(i);
+                        var dato = localStorage.getItem(key);
+
+                        datos.innerHTML += "<div>Clave: " + key + "  -  Valor: " + dato + "</div>";
+                        
+                    }
+
+                }
+
+            }
+
+            window.addEventListener("load", Inicializar, false);
+        </script>
+    </head>
+    <body>
+        <div id="contenedor">
+            <section id="zonaformulario">
+                <form name="miformulario">
+
+                    <p>Clave: <br><input type="text" id="clave"></p>
+                    <p>Valor: <br><textarea id="valor"></textarea></p>
+                    <p><input type="button" id="grabar" value="Grabar"></p>
+
+                </form>
+            </section>
+            <section id="zonadatos">
+                A la espera de la lectura
+            </section>
+        </div>
+    </body>
+</html>

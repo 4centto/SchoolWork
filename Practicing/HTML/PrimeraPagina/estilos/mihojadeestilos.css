@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+body{
+    background-color: rgb(168, 168, 168);
+}
+
+#cabeceraweb{
+    background-color: blue;
+    text-align: center;
+}
+
+#navegacionPrincipal{
+    text-align: center;
+}
+
+#barralateral{
+    background-color: greenyellow;
+    float: left;
+    height: 308;
+    border-radius: 15px;
+}
+
+#contenidoprincipal{
+    background-color: purple;
+    margin-left: 210;
+    text-align: center;
+    padding-top: 15;
+    padding-bottom: 15;
+}
+
+#pieweb{
+    background-color: yellow;
+    text-align: center;
+    margin-top: 10;
+}
+
+li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(100, 100, 100);
+    display: inline;
+    margin-left: 100;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}

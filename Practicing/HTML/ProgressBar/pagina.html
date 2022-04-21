@@ -1,0 +1,43 @@
+<!DOCTYPE html5>
+
+<html>
+    <head>
+        <title>Barra de Progreso</title>
+        <script>
+            var barra, texto;
+            var variable = 0;
+            function Inicializar(){
+                barra = document.getElementById("barra");
+                texto = document.getElementById("progreso");
+
+                barra.addEventListener("click", Timer, false);
+                progreso.addEventListener("load", function(){progreso.innerHTML=variable;}, false);
+
+            }
+
+            function Timer(){
+                if(variable != 100){
+                    bucle = setInterval(CargarBarra, 1);
+                }
+            }
+
+            function CargarBarra(){
+                if(variable != 100){
+                    variable ++;
+                    barra.value = variable;
+                    progreso.innerHTML=variable;
+                } else {
+                    alert("Has llegado al limite");
+                }
+            }
+
+            window.addEventListener("load", Inicializar, false);
+        </script>
+    </head>
+    <body>
+        <div>
+            <progress id="barra" min="0" max="100" value="0"></progress>
+            <p id="progreso"></p>
+        </div>
+    </body>
+</html>

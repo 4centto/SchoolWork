@@ -1,0 +1,3 @@
+﻿  EjercicioUno.cpp
+C:\Users\acer_usuario\Desktop\Programacion\C C++\C++\Ejercicios\EjercicioUno\EjercicioUno.cpp(68,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  EjercicioUno.vcxproj -> C:\Users\acer_usuario\Desktop\Programacion\C C++\C++\Ejercicios\EjercicioUno\Debug\EjercicioUno.exe

@@ -1,0 +1,107 @@
+<!DOCTYPE html5>
+
+<!--
+    EVENTOS:
+        (Objeto a arrastrar)
+        - dragstart   -> Desencadena la accion
+        - drag   -> Desencadena la accion durante el arrastre
+        - dragend   -> Desencadena la accion al terminar la accion de arrastrar
+
+        (Objeto de destino)
+        - dragenter   -> Cuando el raton entra en el area de destino
+        - dragover   -> Cuando el raton se mueve sobre el area de destino
+        - drop   -> Cuando el elemento es soltado en el area de destino
+        - dragleave   -> Cuando el elemento arrastrado sale del area de destino
+
+    TRANSFERENCIA DE DATOS:
+        - setData   -> Declara que datos seran tranferidos
+        - getData   -> Declara que datos seran capturados
+
+        - dataTransfer.setData("Text", codigoguardado)
+        - dataTransfer.getData("Text");
+        - dataTransfer.files
+
+    ->->-> preventDefault();  -> Este metodo hace que las paginas puedan hacptar el Drang & drop  <-<-<-
+-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Drag & Drop</title>
+        <style>
+            #cajaimagen{
+                float: left;
+                width: 500px;
+                margin: 30px;
+                border: 1px solid black;
+            }
+            #destino{
+                float: left;
+                width: 500px;
+                height: 500px;
+                margin: 100px;
+                text-align: center;
+                border: 5px dashed black;
+                border-radius: 10px;
+            }
+        </style>
+        <script>
+
+            var elemento_o, elemento_d, arrastrado = false;
+
+            function Inicializar(){
+                elemento_o = document.getElementById("imagen");
+                elemento_o.addEventListener("dragstart", comenzarArrastrar, false);
+
+                elemento_d = document.getElementById("destino");
+                elemento_d.addEventListener("dragenter", function(e){
+                    e.preventDefault();
+                    elemento_d.style.background="rgba(0, 255, 0, 0.2)";
+                }, false);
+
+                elemento_d.addEventListener("dragover", function(e){
+                    e.preventDefault();
+                }, false);
+
+                elemento_d.addEventListener("drop", function(e){
+
+                    e.preventDefault();
+                    elemento_d.innerHTML=e.dataTransfer.getData("Text");
+                    arrastrado = true;
+
+                }, false);
+
+                elemento_o.addEventListener("dragend", function(e){
+                    var elemento = e.target;
+
+                    if(arrastrado == true){
+                        elemento.style.visibility="hidden";
+                        elemento_d.style.background="none";
+                    } 
+
+                }, false);
+
+                elemento_d.addEventListener("dragleave", function(e){
+                    e.preventDefault();
+                    elemento_d.style.background="none";
+                }, false);
+
+            }
+
+            function comenzarArrastrar(e){
+                var codigo = "<img src='" + elemento_o.getAttribute("src") + "'>";
+                e.dataTransfer.setData("Text", codigo);
+            }
+
+            window.addEventListener("load", Inicializar, false);
+        </script>
+    </head>
+    <body>
+        <section id="destino">
+            Arrastre el elemento hasta aqui
+        </section>
+        <section id="cajaimagen">
+            <img id="imagen" src="logo.jpg">
+        </section>
+    </body>
+</html>

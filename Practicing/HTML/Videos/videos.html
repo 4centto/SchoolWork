@@ -1,0 +1,178 @@
+<!--
+Formatos:
+    -mp4
+    -ogg
+-->
+
+<!--
+    <video></video>
+        -src (Direccion)
+        -controls (Botones de play, pause)
+        -autopaly (Play en cuanto cargue la pagina)
+        -loop (Repeticion)
+        -poster (Imagen .jpg de miniatutra)
+        -preload (Caracteristicas antes de cargar el video)
+-->
+
+<!--
+    Propiedades: 
+        - Duration
+        - currentTime
+        - Paused
+        - Endend
+    
+    Metodos: 
+        - Play()
+        - Pause()
+-->
+
+<!DOCTYPE htlm5>
+
+<html>
+    <head>
+        <title>Videos den html</title>
+
+        <style>
+            #video{
+                width: 720px;
+                margin: 20px auto;
+                background: chocolate;
+                padding: 5px;
+                border: 2px solid black;
+                -webkit-border-radius: 5px;
+            }
+            #mivideo{
+                outline: none;
+            }
+            nav{
+                margin: 5px 0;
+            }
+            #botones {
+                float: left;
+                width: 100px;
+                height: 20px;
+            }
+            #reproducir{
+                cursor: pointer;
+                color: white;
+                font-size: 18px;
+                background: rgb(51, 51, 51);
+                border-style: none;
+                border-radius: 5px;
+                outline: none;
+                -webkit-animation: 1s ease 0s;
+            }
+            #reproducir:hover{
+                background: rgb(95, 95, 95);
+                -webkit-transform: scale(1.1);
+            }
+            #barra{
+                background: white;
+                width: 600px;
+                height: 16px;
+                border: 1px solid grey;
+                padding: 2px;
+                margin-left: 80px;
+                cursor: pointer;
+            }
+            #progreso{
+                position: absolute;
+                width: 0px;
+                height: 16px;
+                background: rgba(0, 0, 150, 2);
+            }
+        </style>
+
+        <script>
+            var mivideo, reproducir, barra, progreso, maximo = 600;
+
+            function Comenzar(){
+                mivideo = document.getElementById("mivideo");
+                reproducir = document.getElementById("reproducir");
+                barra = document.getElementById("barra");
+                progreso = document.getElementById("progreso");
+
+                reproducir.addEventListener("click", clicando, false);
+                barra.addEventListener("click", adelantando, false);
+
+            }
+
+            function clicando(){
+                if((mivideo.paused == false) && (mivideo.ended == false)){
+                    mivideo.pause();
+                    reproducir.innerHTML="Play";
+                } else {
+                    mivideo.play();
+                    reproducir.innerHTML="Pause";
+                    bucle=setInterval(estado, 0.1);
+                }
+            }
+
+            function estado(){
+                if(mivideo.ended == false){
+                    var total = parseInt((mivideo.currentTime * maximo) / mivideo.duration);
+                    progreso.style.width = total + "px";
+                }
+            }
+
+            function adelantando(posicion){
+                if(mivideo.ended == false){
+
+                    if(mivideo.paused == false){
+
+                        var ratonX = posicion.pageX - barra.offsetLeft;
+                        var nuevoTiempo = (ratonX * mivideo.duration) / maximo;
+                        
+                        mivideo.currentTime=nuevoTiempo;
+
+                        progreso.style.width= ratonX + "px";
+
+                    } else {
+                        var ratonX = posicion.pageX - barra.offsetLeft;
+                        var nuevoTiempo = (ratonX * mivideo.duration) / maximo;
+                        
+                        mivideo.currentTime=nuevoTiempo;
+
+                        progreso.style.width= ratonX + "px";
+
+                        mivideo.play();
+                        reproducir.innerHTML="Pause"
+
+                    }
+
+                }
+            }
+
+            window.addEventListener("load", Comenzar, false);
+
+        </script>
+
+    </head>
+    <body>
+
+        <section id="video">
+            <video id="mivideo" width="720px">
+                <source src="videomp4.mp4">
+                <source src="videoogg.ogg">
+            </video>
+
+            <nav>
+                <div id="botones">
+                    <button type="button" id="reproducir">Play</button>
+                </div>
+                <div id="barra">
+                    <div id="progreso"></div>
+                </div>
+            </nav>
+
+        </section>
+
+        <div style="text-align: center;">
+            <p style="font-size: 36px; font-family: fantasy; text-shadow: rgb(163, 163, 163) 5px 5px 5px;
+                        ">
+                REPRODUCCION DE VIDEOS
+            </p>
+        </div>
+
+    </body>
+</html>

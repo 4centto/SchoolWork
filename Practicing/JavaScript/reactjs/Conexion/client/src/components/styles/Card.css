@@ -1,0 +1,37 @@
+.card{
+    position: relative;
+    background-color: rgb(161, 161, 161);
+    width: 400px;
+    height: 80px;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card{
+    font-size: 2em;
+}
+
+.hover{
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: rgb(88, 88, 88);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease 0s;
+}
+
+.card:hover > .hover{
+    top: 0;
+}

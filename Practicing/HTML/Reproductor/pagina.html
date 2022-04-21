@@ -1,0 +1,205 @@
+<!DOCTYPE html5>
+
+<html>
+    <head>
+        <title>REPROUDUCTOR MUSICA Y VIDEO</title>
+
+        <style>
+            body{
+                background: -webkit-radial-gradient(circle, black, grey);
+            }
+            section{
+                background: rgb(26, 26, 26);
+                margin: 20px auto;
+                width: 720px;
+                border-radius: 10px;
+                padding: 10px;
+                box-shadow: black 20px 20px 10px;
+                text-align: center;
+            }
+            #video{
+                cursor: pointer;
+            }
+            #contenedor_audio{
+                margin-top: 50px;   
+            }
+            #barra{
+                background: rgb(51, 51, 51);
+                border-radius: 10px;
+                width: 300px;
+                height: 20px;
+                display: inline-flex;
+                margin-top: 20px;
+                padding: 5px;
+            }
+            #progreso{
+                position: absolute;
+                height: 20px;
+                width: 0px;
+                background: rgb(131, 131, 131);
+                border-radius: 10px;
+                box-shadow: black 2px 2px 5px;
+            }
+            #play{
+                width: 100px;
+                height: 50px;
+                font-size: 30px;
+                text-shadow: black 5px 5px 10px;
+                font-family: fantasy;
+                color: white;
+                background: rgb(15, 15, 15);
+                border-style: none;
+                border-radius: 20px;
+                cursor: pointer;
+                outline: none;
+                -webkit-animation: 1s ease 0s;
+            }
+            #play:hover{
+                -webkit-transform: scale(1.1);
+                background: rgb(61, 61, 61);
+                box-shadow: black 5px 5px 5px;
+            }
+            #barra_audio{
+                background: rgb(51, 51, 51);
+                border-radius: 10px;
+                width: 300px;
+                height: 20px;
+                display: inline-flex;
+                margin-top: 20px;
+                padding: 5px;
+                margin-left: 50px;
+            }
+            #progreso_audio{
+                position: absolute;
+                height: 20px;
+                width: 0px;
+                background: rgb(131, 131, 131);
+                border-radius: 10px;
+                box-shadow: black 2px 2px 5px;
+            }
+        </style>
+
+        <script>
+
+            var progreso, video;
+            var audio, boton_audio, progreso_audio;
+            var barra_video;
+
+            function CargarElementos(){
+                video = document.getElementById("video");
+                progreso = document.getElementById("progreso");
+                audio = document.getElementById("audio");
+                boton_audio = document.getElementById("play");
+                progreso_audio = document.getElementById("progreso_audio");
+                barra_video = document.getElementById("barra");
+                barra_audio = document.getElementById("barra_audio");
+
+                video.addEventListener("click", ReproducirVideo, false);
+                boton_audio.addEventListener("click", ReproducirAudio, false);
+                barra_video.addEventListener("click", TiempoVideo, false);
+
+            }
+
+            function TiempoVideo(posicion){
+                if(video.currentTime > 0){
+                    if(video.ended == false){
+                        if(video.paused == false){
+                            var ratonx = posicion.pageX - barra_video.offsetLeft;
+                            var nuevoTiempo = (ratonx * video.duration) / 300;
+                            video.currentTime = nuevoTiempo;
+                            progreso.style.width = nuevoTiempo + "px";
+                        } else {
+                            var ratonx = posicion.pageX - barra_video.offsetLeft;
+                            var nuevoTiempo = (ratonx * video.duration) / 300;
+                            video.currentTime = nuevoTiempo;
+                            progreso.style.width = nuevoTiempo + "px";
+                            video.play();
+                        }
+                    }
+                } else {
+                    alert("No se puede adelantar el video");
+                }
+            }
+
+            function ReproducirVideo(){
+                if(audio.paused == true){
+                    if(video.ended == false && video.paused == false){
+                        video.pause();
+                    } else {
+                        video.play();
+                        bucle = setInterval(BarraDeReproduccion, 0.1);
+                    }
+                } else {
+                    audio.pause();
+                    boton_audio.innerHTML="PLAY";
+                    if(video.ended == false && video.paused == false){
+                        video.pause();
+                    } else {
+                        video.play();
+                        bucle = setInterval(BarraDeReproduccion, 0.1);
+                    }
+                }
+            }
+
+            function BarraDeReproduccion(){
+                var total = parseInt((video.currentTime * 300) / video.duration);
+                progreso.style.width = total + "px";
+            }
+
+            function ReproducirAudio(){
+                if(video.paused == true){
+                    if(audio.ended == false && audio.paused == false){
+                        audio.pause();
+                        boton_audio.innerHTML="PLAY";
+                    } else {
+                        audio.play();
+                        boton_audio.innerHTML="PAUSE";
+                        bucle = setInterval(BarraReproduccionAudio, 0.1);
+                    }
+                } else {
+                    video.pause();
+                    if(audio.ended == false && audio.paused == false){
+                        audio.pause();
+                        boton_audio.innerHTML="PLAY";
+                    } else {
+                        audio.play();
+                        boton_audio.innerHTML="PAUSE";
+                        bucle = setInterval(BarraReproduccionAudio, 0.1);
+                    }
+                }
+            }
+
+            function BarraReproduccionAudio(){
+                var total = parseInt((audio.currentTime * 300) / audio.duration);
+                progreso_audio.style.width = total + "px";
+            }
+
+            window.addEventListener("load", CargarElementos, false);
+        </script>
+
+    </head>
+    <body>
+        <section>
+            <div>
+                <video id="video" width="720px" style="outline: none;">
+                    <source type="video/mp4" src="video.mp4"/>
+                </video>
+            </div>
+            <div id="barra">
+                <div id="progreso">
+
+                </div>
+            </div>
+            <div id="contenedor_audio">
+                <button type="button" id="play">PLAY</button>
+                <div id="barra_audio">
+                    <div id="progreso_audio">
+                    </div>
+                </div>
+                <audio id="audio" style="outline: none;">
+                    <source type="audio/mp3" src="musica.mp3" />
+                </audio>
+            </div>
+        </section>
+    </body>
+</html>

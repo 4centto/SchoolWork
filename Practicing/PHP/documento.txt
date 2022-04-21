@@ -1,0 +1,4 @@
+Este es el texto principal,
+el que se ecribió primero.
+Este texto es el adjuntado,
+el que se escribio despues.

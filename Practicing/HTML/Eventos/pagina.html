@@ -1,0 +1,83 @@
+<!DOCTYPE html5>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Eventos con JS</title>
+        <script src="script.js"></script>
+
+        <style>
+
+            #contenedor_principal{
+                text-align: center;
+            }
+
+            #titulo{
+                text-align: center;
+                display: inline-table;
+                width: 200px;
+            }
+
+            #texto_titulo{
+                -webkit-animation: 1s ease 0s;
+            }
+
+            #texto_titulo:hover{
+                -webkit-transform: scale(1.1) rotate(-10grad);
+            }
+
+            ul{
+                margin-top: 40px;
+            }
+
+            li{
+                display: inline-flex;
+            }
+
+            img{
+                margin-left: 20px;
+                margin-right: 20px;
+                border-radius: 20px;
+                -webkit-animation: 1s ease 0s;
+            }
+
+            img:hover{
+                -webkit-transform: scale(1.1);
+                border-style: solid;
+            }
+
+            body{
+                background-color: rgb(82, 82, 82);
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div id="contenedor_principal">
+            <div id="titulo">
+                <p id="texto_titulo" style="font-size: 20px; font-family: fantasy; cursor: pointer; text-shadow: rgb(180, 180, 180) 5px 5px 5px;">
+                    <strong>PARA EJEMPLOS DE JAVASCRIPT</strong>
+                </p>
+            </div>
+
+            <!---Aqui comienza la lista para las imagenes-->
+            <div>
+                <ul>
+                    <li>
+                        <img id="imagenes" src="1.jpg" />
+                    </li>
+                    <li>
+                        <img id="imagenes" src="2.jpg" />
+                    </li>
+                    <li>
+                        <img id="imagenes" src="3.jpg" />
+                    </li>
+                    <li>
+                        <img id="imagenes" src="4.jpg" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html5>
+
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Nuevas Reglas</title>
+
+        <style>
+
+            #btn{
+                text-align: center;
+                margin: auto;
+                -webkit-transition: 1s ease 0s;
+            }
+
+            #principal{
+                width: 500px;
+                /* background-color: red; */
+                text-align: center;
+                margin: 15px auto;
+                padding: 15px;
+                border: 3px;
+                border-color: skyblue;
+                border-style: solid;
+                border-radius: 30px;
+                box-shadow: black 10px 10px 10px;
+                cursor: pointer;
+                background: -moz-linear-gradient(top, #ff0000, #490000); /* Degradado para mozilla */
+                background: -webkit-radial-gradient(center, circle, #ff0000, #490000);  /* Degradado para chrome */
+                background: -o-repeating-linear-gradient(top, #ff0000, #490000);  /* Degradado para opera */
+                /* -webkit-transform: scale(2); */
+                /* -moz-transform: scale(2); */
+                /* -o-transform: scale(2); */
+                /* -webkit-transform: rotate(0deg); */
+                /* -moz-transform: rotate(0deg); */
+                /* -o-transform: rotate(0deg); */
+                /* -ms-transform: ; */
+                -webkit-transition: 1s ease 0s;
+            }
+
+            #principal:hover{
+                /* -webkit-transform: rotate(5deg); */
+                -webkit-transform: scale(1.1);
+            }
+
+            /* Aqui se va a importar una nueva fuente para que todos los usuarios puedan ver la
+            pagina con este tipo de fuente, sin tener que instalarla  en su computadora */
+
+            @font-face{
+                font-family: 'LetraTitulo'; /* Se le da un nombre a la nueva fuente */
+                src: url('ViableLogic-PersonalUse.otf'); /* Direccion de la fuente */
+            }
+
+            #titulo{
+                font: bold;
+                font-size: 36px;
+                font-family: 'LetraTitulo'; /* Aqui es donde se usa la nueva fuente */
+                text-shadow: chartreuse 3px 3px 5px;
+                color: rgba(0, 0, 0, 0.7);
+            }
+
+            #btn:hover{
+                -webkit-transform: scale(1.1);
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        
+        <header id="principal">
+
+            <span id="titulo">Estilos CSS3</span>
+
+        </header>
+
+        <div id="btn">
+
+            <button style="width: 200px; height: 50px; background-color: sandybrown;
+                            border-style: dashed; font-size: 20px;" >Botón</button>
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html5>
+
+<!--
+    API File (Procesar informacion de archivos locales)
+    API File Directories & System (Sistemas de archivos para la aplicacion en curso)
+    API Writer (Escritura de contenido dentro de archivos)
+
+    FileReader  -> Devuelve un objeto
+
+    Metodos:
+        - readAsText  (Intermpretar cada byte como archivo de texto en utf-8)
+        - readAsBinaryString  (Lee la informacion en bruto, sirve mas para mover archivos de lugar)
+        - readAsDataUrl  (Devuelve el archivo como una cadena url en base 64 y moverla codificada)
+        - readAsArrayBuffer  (Devuelve los datos en un buffer de tipo binario y en un arreglo)
+
+    PROPIEDADES:
+        - name
+        - size
+        - type
+
+    CREACION DE ARCHIVOS:
+        METODOS:
+            1) Pedir permiso de uso de memoria:
+                - Temporal:  navigator.webkitTemporaryStorage.requestQuota
+                - Persistente:  navigator.webkitPersistentStorage.requestQuota
+
+            2) Creacion del sistema de archivos:
+                - window.webkitRequestFileSystem
+
+            3) Creacion de archivos o directorios nuevos:
+                - getFile(archivos);
+                - getDirectory(directorios);
+            
+            4) Operaciones:
+                - Listar
+                - Mover
+                - Copiar
+                - Eliminar
+            
+            5) Escribir y agregar contenido a los archivos:
+                - API FileWriter
+
+-->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Archivos locales</title>
+        <style>
+            #zonaformulario{
+                width: 350px;
+                border: 2px solid black;
+                text-align: center;
+            }
+            #zonadatos{
+                margin: 10px auto;
+            }
+        </style>
+
+        <script>
+            var zonadatos, archivos;
+            function Inicializar(){
+
+                zonadatos = document.getElementById("zonadatos");
+                archivos = document.getElementById("archivos");
+
+                archivos.addEventListener("change", function(e){
+
+                    var archivos = e.target.files;
+                    zonadatos.innerHTML="";
+                    var miarchivo = archivos[0];
+
+                    /*
+                    if(!miarchivo.type.match(/image/)){
+                        alert("Selecciona una imagen por favor...");
+                    } else {
+                        zonadatos.innerHTML += "Nombre: " + miarchivo.name + "<br>";
+                        zonadatos.innerHTML += "Tamaño del archivo: " + miarchivo.size + " bytes <br>";
+
+                        var lector = new FileReader();
+                        lector.readAsDataURL(miarchivo);
+                        lector.addEventListener("load", function(e){
+                            var resultado = e.target.result;
+                            zonadatos.innerHTML += "<img src='" + resultado + "' width='400px'>";
+                        }, false);
+
+                    }
+                    */
+
+                    var lector = new FileReader();
+                    lector.readAsText(miarchivo, "iso-8859-1");
+                    
+                    lector.addEventListener("load", function(e){
+
+                        var resultado = e.target.result;
+                        zonadatos.innerHTML=resultado;
+
+                    }, false);                 
+
+                }, false);
+
+            }
+
+            window.addEventListener("load", Inicializar, false);
+        </script>
+    </head>
+    <body>
+        <div id="contenedor">
+            <section id="zonaformulario">
+                <form name="formulario">
+                    <p>Archivos: <br><input type="file" name="archivos" id="archivos"></p>
+                </form>
+            </section>
+            <section id="zonadatos">
+                No hay informacion
+            </section>
+        </div>
+    </body>
+</html>

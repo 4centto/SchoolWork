@@ -1,0 +1,88 @@
+<!DOCTYPE html5>
+
+<!--
+    Formas:
+        a) Localizando la IP
+        b) API Geolocation
+        c) Bases de datos IP's
+        d) Otras ...
+
+    Métodos:
+        - getCurrentPosition(ubicacion, errores, configuracion);
+        - watchPosition(ubicacion, errores, configuracion);
+        - clearWatch();
+
+        position: Es un objeto que es retornado si getCurrentPosition y watchPosition tienen exito
+
+    PROPIEDADES DE POSITION:
+        a) Coords:
+            - latitude
+            - longitude
+            - altitud
+            - accuracy
+            - altitudeAccuracy
+            - heading
+            - speed
+
+        b) Timestamp: Momento exacto en el que se determinó la posicion
+
+    PROPIEDADES DE ERROR:
+        - error.message
+        - error.code
+
+    PROPIEDADES DE CONFIGURACION:
+        - enableHighAccuracy  -> Si es true se utilizaran sistemas de GPS
+        - timeOut  -> Tiempo en milisegundos para obtener la localizacion
+        - maximumAge  ->  Debera determinar si debera de ir al caché a buscar la ultima localizacion
+-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Geolocation</title>
+        <script>
+
+            var parametros={enableHighAccuracy: true, timeout: 10000, maximumAge: 60000};
+
+            function Inicializar(){
+                var boton = document.getElementById("dame_ubicacion");
+                
+                boton.addEventListener("click", function(){
+                    navigator.geolocation.getCurrentPosition(mostrar_posicion, errores, parametros);
+                }, false);
+            }
+
+            function errores(e){
+                if(e.message == "User denied Geolocation"){
+                    alert("Debes permitir el uso de la geolocalizacvion en tu navegador");
+                }
+            }
+
+            function mostrar_posicion(posicion){
+                var seccion = document.getElementById("ubicacion");
+                /*
+                var miubicacion = "";
+
+                miubicacion += "Latitud: " + posicion.coords.latitude + "<br>";
+                miubicacion += "Longitud: " + posicion.coords.longitude + "<br>";
+                miubicacion += "Exactitud: " + posicion.coords.accuracy + "<br>";
+                
+                seccion.innerHTML=miubicacion;
+                */
+
+                var mapa = "http<://maps.google.com/maps/api/staticmap?center=" + posicion.coords.latitude
+                + "," + posicion.coords.longitude + "," + "&zoom=12&size=400x400&sensor=false&markers=" + 
+                posicion.coords.latitude + "," + posicion.coords.longitude;
+                seccion.innerHTML="<img src='" + mapa + "'>";
+
+            }
+
+            window.addEventListener("load", Inicializar, false);
+        </script>
+    </head>
+    <body>
+        <section id="ubicacion">
+            <button id="dame_ubicacion">Clickame</button>
+        </section>
+    </body>
+</html>

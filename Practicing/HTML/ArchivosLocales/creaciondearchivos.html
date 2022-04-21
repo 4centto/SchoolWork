@@ -1,0 +1,72 @@
+<!DOCTYPE html5>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Archivos locales</title>
+        <style>
+            #zonaformulario{
+                width: 350px;
+                border: 2px solid black;
+                text-align: center;
+            }
+            #zonadatos{
+                margin: 10px auto;
+            }
+        </style>
+
+        <script>
+
+            function Inicializar(){
+                zonadatos = document.getElementById("zonadatos");
+                var boton = document.getElementById("boton");
+
+                boton.addEventListener("click", function(){
+                    var nombre_archivo = document.getElementById("entrada").value;
+                    if(nombre_archivo != ""){
+                        espacio.getFile(nombre_archivo, {create:true, exclusive:false}, mostrar, errores);
+                    } else {
+                        alert("No hay un nombre para el archivo");
+                    }
+                }, false);
+
+                navigator.webkitPersistentStorage.requestQuota(5 * 1024 * 1024, function(){
+
+                    window.webkitRequestFileSystem(PERSISTENT, 5 * 1024 * 1024, crearsis, errores);
+
+                });
+
+            }
+
+            function mostrar (entrada){
+                document.getElementById("entrada").value="";
+                zonadatos.innerHTML="Exito en la creacion de espacio y archivo! <br>";
+                zonadatos.innerHTML += "Nombre: " + entrada.name + "<br>";
+                zonadatos.innerHTML += "Ruta: " + entrada.fullPath + "<br>";
+            }
+
+            function errores(e){
+                alert("Ha ocurrido un error: " + e.code);
+            }
+
+            function crearsis(sistema){
+                espacio = sistema.root;
+            }
+
+            window.addEventListener("load", Inicializar, false);
+        </script>
+    </head>
+    <body>
+        <div id="contenedor">
+            <section id="zonaformulario">
+                <form name="formulario">
+                    <p>Nombre:<br><input type="Text" name="entrada" id="entrada" required></p>
+                    <p><input type="button" name="boton" id="boton" value="Aceptar"</p>
+                </form>
+            </section>
+            <section id="zonadatos">
+                No hay informacion
+            </section>
+        </div>
+    </body>
+</html>

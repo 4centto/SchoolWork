@@ -1,0 +1,82 @@
+<!DOCTYPE html5>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EJEMPLOS DE CANVAS</title>
+
+        <style>
+            #contenedor{
+                background: black;
+                width: 1200px;
+                border-radius: 10px;
+                margin: 0px auto;
+                padding: 5px;
+            }
+            #lienzo{
+                border-radius: 10px;
+                background: -webkit-linear-gradient(left, black, red);
+                margin: auto;
+            }
+        </style>
+        <script>
+
+            function Inicializar(){
+                var elemento = document.getElementById("lienzo");
+                lienzo = elemento.getContext("2d");
+
+                window.addEventListener("mousemove", Animacion, false);
+                window.addEventListener("click", CambiarColor, false);
+                window.addEventListener("mousedown", AumentarTamano, false);
+
+            }
+
+            var x = 0, y = 0;
+            var cambio = false;
+
+            function Animacion(e){
+
+                lienzo.clearRect(0, 0, 1200, 600);
+
+                x = e.clientX;
+                y = e.clientY;
+
+                lienzo.beginPath();
+                lienzo.arc(x -80, y - 10, 50, Math.PI * 2, false);
+                lienzo.fill();
+
+            }
+
+            function CambiarColor(e){
+
+                lienzo.clearRect(0, 0, 1200, 600);
+
+                x = e.clientX;
+                y = e.clientY;
+
+                if(cambio == false){
+                    lienzo.fillStyle="black";
+                    cambio = true;
+                } else {
+                    lienzo.fillStyle="red";
+                    cambio = false;
+                }
+
+                lienzo.beginPath();
+                lienzo.arc(x -80, y - 10, 50, Math.PI * 2, false);
+                lienzo.fill();
+
+            }
+
+            window.addEventListener("load", Inicializar, false);
+
+        </script>
+    </head>
+    <body>
+        <section id="contenedor">
+            <canvas id="lienzo" width="1200px" height="600px">
+                El navegador no acepta dibujos
+            </canvas>
+        </section>
+    </body>
+</html>
