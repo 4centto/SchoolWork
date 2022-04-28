@@ -1,35 +1,25 @@
-int IN1 = 8;
-int IN2 = 9;
-int IN3 = 10;
-int IN4 = 11;
-int demora = 5;
-int paso[4][4] = {
-  {1, 0, 0, 0},
-  {0, 1, 0, 0},
-  {0, 0, 1, 0},
-  {0, 0, 0, 1}
-};
+// Arduino stepper motor control code
+
+#include <Stepper.h> // Include the header file
+
+// change this to the number of steps on your motor
+#define STEPS 2048
+
+// create an instance of the stepper class using the steps and pins
+Stepper stepper(STEPS, 8, 10, 9, 11);
 
 void setup() {
-  pinMode(IN1, OUTPUT);
-  pinMode(IN2, OUTPUT);
-  pinMode(IN3, OUTPUT);
-  pinMode(IN4, OUTPUT);
+  Serial.begin(9600);
+  stepper.setSpeed(3);
 }
 
 void loop() {
-  for(int i = 0; i < 512; i++){
-    for(int i = 0; i < 4; i++){
-      digitalWrite(IN1, paso[i][0]);
-      digitalWrite(IN2, paso[i][1]);
-      digitalWrite(IN3, paso[i][2]);
-      digitalWrite(IN4, paso[i][3]);
-      delay(demora);
-    }
+  if(Serial.available()){
+    int value = Serial.parseInt();
+    stepper.step(value);
   }
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, LOW);
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, LOW);
-  delay(5000);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
 }

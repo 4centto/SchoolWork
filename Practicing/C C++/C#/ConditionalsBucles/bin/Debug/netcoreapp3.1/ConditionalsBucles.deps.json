@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "ConditionalsBucles/1.0.0": {
+        "runtime": {
+          "ConditionalsBucles.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConditionalsBucles/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

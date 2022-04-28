@@ -1,0 +1,13 @@
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\bin\Debug\netcoreapp3.1\POO.exe
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\bin\Debug\netcoreapp3.1\POO.deps.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\bin\Debug\netcoreapp3.1\POO.runtimeconfig.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\bin\Debug\netcoreapp3.1\POO.runtimeconfig.dev.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\bin\Debug\netcoreapp3.1\POO.dll
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\bin\Debug\netcoreapp3.1\POO.pdb
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\obj\Debug\netcoreapp3.1\POO.csprojAssemblyReference.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\obj\Debug\netcoreapp3.1\POO.AssemblyInfoInputs.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\obj\Debug\netcoreapp3.1\POO.AssemblyInfo.cs
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\obj\Debug\netcoreapp3.1\POO.csproj.CoreCompileInputs.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\obj\Debug\netcoreapp3.1\POO.dll
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\obj\Debug\netcoreapp3.1\POO.pdb
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\POO\obj\Debug\netcoreapp3.1\POO.genruntimeconfig.cache

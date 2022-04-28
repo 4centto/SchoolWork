@@ -1,0 +1,13 @@
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\bin\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).exe
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\bin\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).deps.json
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\bin\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).runtimeconfig.json
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\bin\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).runtimeconfig.dev.json
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\bin\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).dll
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\bin\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).pdb
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\obj\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).csprojAssemblyReference.cache
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\obj\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).AssemblyInfoInputs.cache
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\obj\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).AssemblyInfo.cs
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\obj\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).csproj.CoreCompileInputs.cache
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\obj\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).dll
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\obj\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).pdb
+C:\Users\acer_usuario\Source\Repos\Extras(Exceptions, Files, Etc.)\obj\Debug\netcoreapp3.1\Extras(Exceptions, Files, Etc.).genruntimeconfig.cache

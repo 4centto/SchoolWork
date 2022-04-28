@@ -1,0 +1,13 @@
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\bin\Debug\netcoreapp3.1\ConditionalsBucles.exe
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\bin\Debug\netcoreapp3.1\ConditionalsBucles.deps.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\bin\Debug\netcoreapp3.1\ConditionalsBucles.runtimeconfig.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\bin\Debug\netcoreapp3.1\ConditionalsBucles.runtimeconfig.dev.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\bin\Debug\netcoreapp3.1\ConditionalsBucles.dll
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\bin\Debug\netcoreapp3.1\ConditionalsBucles.pdb
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\obj\Debug\netcoreapp3.1\ConditionalsBucles.csprojAssemblyReference.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\obj\Debug\netcoreapp3.1\ConditionalsBucles.AssemblyInfoInputs.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\obj\Debug\netcoreapp3.1\ConditionalsBucles.AssemblyInfo.cs
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\obj\Debug\netcoreapp3.1\ConditionalsBucles.csproj.CoreCompileInputs.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\obj\Debug\netcoreapp3.1\ConditionalsBucles.dll
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\obj\Debug\netcoreapp3.1\ConditionalsBucles.pdb
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ConditionalsBucles\obj\Debug\netcoreapp3.1\ConditionalsBucles.genruntimeconfig.cache

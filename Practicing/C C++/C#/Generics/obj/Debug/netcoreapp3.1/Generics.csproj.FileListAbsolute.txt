@@ -1,0 +1,13 @@
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\bin\Debug\netcoreapp3.1\Generics.exe
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\bin\Debug\netcoreapp3.1\Generics.deps.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\bin\Debug\netcoreapp3.1\Generics.runtimeconfig.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\bin\Debug\netcoreapp3.1\Generics.runtimeconfig.dev.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\bin\Debug\netcoreapp3.1\Generics.dll
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\bin\Debug\netcoreapp3.1\Generics.pdb
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\obj\Debug\netcoreapp3.1\Generics.csprojAssemblyReference.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\obj\Debug\netcoreapp3.1\Generics.AssemblyInfoInputs.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\obj\Debug\netcoreapp3.1\Generics.AssemblyInfo.cs
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\obj\Debug\netcoreapp3.1\Generics.csproj.CoreCompileInputs.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\obj\Debug\netcoreapp3.1\Generics.dll
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\obj\Debug\netcoreapp3.1\Generics.pdb
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\Generics\obj\Debug\netcoreapp3.1\Generics.genruntimeconfig.cache

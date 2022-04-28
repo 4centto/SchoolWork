@@ -1,0 +1,13 @@
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\bin\Debug\netcoreapp3.1\ArreglosYStrings.exe
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\bin\Debug\netcoreapp3.1\ArreglosYStrings.deps.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\bin\Debug\netcoreapp3.1\ArreglosYStrings.runtimeconfig.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\bin\Debug\netcoreapp3.1\ArreglosYStrings.runtimeconfig.dev.json
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\bin\Debug\netcoreapp3.1\ArreglosYStrings.dll
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\bin\Debug\netcoreapp3.1\ArreglosYStrings.pdb
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\obj\Debug\netcoreapp3.1\ArreglosYStrings.csprojAssemblyReference.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\obj\Debug\netcoreapp3.1\ArreglosYStrings.AssemblyInfoInputs.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\obj\Debug\netcoreapp3.1\ArreglosYStrings.AssemblyInfo.cs
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\obj\Debug\netcoreapp3.1\ArreglosYStrings.csproj.CoreCompileInputs.cache
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\obj\Debug\netcoreapp3.1\ArreglosYStrings.dll
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\obj\Debug\netcoreapp3.1\ArreglosYStrings.pdb
+C:\Users\acer_usuario\Desktop\school_notes\Practicing\C C++\C#\ArreglosYStrings\obj\Debug\netcoreapp3.1\ArreglosYStrings.genruntimeconfig.cache

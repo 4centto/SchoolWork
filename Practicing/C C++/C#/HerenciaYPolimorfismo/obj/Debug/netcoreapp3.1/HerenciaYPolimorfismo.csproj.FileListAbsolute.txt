@@ -1,0 +1,13 @@
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\bin\Debug\netcoreapp3.1\HerenciaYPolimorfismo.exe
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\bin\Debug\netcoreapp3.1\HerenciaYPolimorfismo.deps.json
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\bin\Debug\netcoreapp3.1\HerenciaYPolimorfismo.runtimeconfig.json
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\bin\Debug\netcoreapp3.1\HerenciaYPolimorfismo.runtimeconfig.dev.json
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\bin\Debug\netcoreapp3.1\HerenciaYPolimorfismo.dll
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\bin\Debug\netcoreapp3.1\HerenciaYPolimorfismo.pdb
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\obj\Debug\netcoreapp3.1\HerenciaYPolimorfismo.csprojAssemblyReference.cache
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\obj\Debug\netcoreapp3.1\HerenciaYPolimorfismo.AssemblyInfoInputs.cache
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\obj\Debug\netcoreapp3.1\HerenciaYPolimorfismo.AssemblyInfo.cs
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\obj\Debug\netcoreapp3.1\HerenciaYPolimorfismo.csproj.CoreCompileInputs.cache
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\obj\Debug\netcoreapp3.1\HerenciaYPolimorfismo.dll
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\obj\Debug\netcoreapp3.1\HerenciaYPolimorfismo.pdb
+C:\Users\acer_usuario\Source\Repos\HerenciaYPolimorfismo\obj\Debug\netcoreapp3.1\HerenciaYPolimorfismo.genruntimeconfig.cache
