@@ -32,7 +32,4 @@ void loop() {
   if(miBT.available()){  //Lee BT y envia a arduino
     Serial.write(miBT.read());
   }
-  if(Serial.available()){  //Lee Arduino y envia a BT
-    miBT.write(Serial.read());
-  }
 }

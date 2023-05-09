@@ -1,0 +1,5 @@
+System.out.println("Hola Mundo");
+Object object = new Object();
+objeto.funcion1();
+objeto
+      .funcion(2);
